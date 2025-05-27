@@ -21,3 +21,6 @@ socks5 start|stop|restart|status
 ### 更新和信息
 socks5 update
 socks5 info
+
+### 检查是否连通
+curl -v --socks5 admin:123456@127.0.0.1:1080 http://example.com
