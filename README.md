@@ -1,7 +1,7 @@
 # 使用方法：
 
 # 一键安装（首次运行）：
-
+yum install -y jq<br>
 wget https://raw.githubusercontent.com/xsj0609/socks5-install/main/socks5-v2ray.sh<br>
 mv -f socks5-v2ray.sh socks5.sh<br>
 chmod +x socks5.sh<br>
