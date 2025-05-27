@@ -97,7 +97,7 @@ user_add() {
         exit 1
     fi
     if ! grep -q "^$1:" $PASSWD_PATH; then
-        local pwhash=$(mkpasswd -m sha-256crypt "$2")
+        local pwhash=$(mkpasswd -m sha-512crypt "$2")
         echo "$1:$pwhash" >> $PASSWD_PATH
         systemctl restart $SERVICE_NAME
         echo "用户 $1 添加成功"
