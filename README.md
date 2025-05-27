@@ -2,28 +2,28 @@
 
 一键安装（首次运行）：
 
-wget https://raw.githubusercontent.com/xsj0609/socks5-install/main/socks5.sh -O /tmp/socks5.sh<b>
+wget https://raw.githubusercontent.com/xsj0609/socks5-install/main/socks5.sh -O /tmp/socks5.sh<br>
 bash /tmp/socks5.sh install
 
-添加用户：<b>
+添加用户：<br>
 socks5 user add admin 123456
 
-启动服务：<b>
+启动服务：<br>
 socks5 start
 
-功能说明：<b>
-自动编译安装 Dante SOCKS5 服务<b>
-支持用户认证管理<b>
-完整的服务生命周期管理（启动/停止/状态查看）<b>
-支持脚本自我更新<b>
-自动配置防火墙规则（如果使用 UFW）<b>
-系统服务集成（systemd）<b>
+功能说明：<br>
+自动编译安装 Dante SOCKS5 服务<br>
+支持用户认证管理<br>
+完整的服务生命周期管理（启动/停止/状态查看）<br>
+支持脚本自我更新<br>
+自动配置防火墙规则（如果使用 UFW）<br>
+系统服务集成（systemd）
 
-注意事项：<b>
-默认监听端口为 1080（可在配置文件中修改）<b>
-用户密码使用 SHA-256crypt 加密存储<b>
-服务安装后会自动设置开机启动<b>
-每次用户变更后会自动重启服务<b>
-支持主流的 Ubuntu 版本（18.04+）<b>
+注意事项：<br>
+默认监听端口为 1080（可在配置文件中修改）<br>
+用户密码使用 SHA-256crypt 加密存储<br>
+服务安装后会自动设置开机启动<br>
+每次用户变更后会自动重启服务<br>
+支持主流的 Ubuntu 版本（18.04+）<br>
 
 安装完成后即可通过 socks5 命令进行全功能管理，代理服务器地址为 服务器IP:1080，支持用户名密码认证。
