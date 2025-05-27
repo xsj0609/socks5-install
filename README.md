@@ -3,7 +3,7 @@
 # 一键安装（首次运行）：
 
 wget https://raw.githubusercontent.com/xsj0609/socks5-install/main/socks5-v2ray.sh<br>
-mv socks5-v2ray.sh socks5.sh<br>
+mv -f socks5-v2ray.sh socks5.sh<br>
 chmod +x socks5.sh<br>
 ./socks5.sh install
 
