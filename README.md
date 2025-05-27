@@ -2,8 +2,7 @@
 
 一键安装（首次运行）：
 
-wget https://raw.githubusercontent.com/qinghuas/socks5-install/master/socks5.sh
-bash socks5.sh install
+wget https://raw.githubusercontent.com/qinghuas/socks5-install/master/socks5.sh;bash socks5.sh install
 
 添加用户：
 socks5 user add admin 123456
