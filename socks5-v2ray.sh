@@ -10,7 +10,7 @@ install_dependencies() {
 # 下载并安装 v2ray
 install_v2ray() {
     echo "Downloading and installing v2ray..."
-    wget https://github.com/v2fly/v2ray-core/releases/download/v1.5.10/v2ray-linux-64.zip
+    wget https://github.com/v2fly/v2ray-core/releases/download/v5.32.0/v2ray-linux-64.zip
     unzip v2ray-linux-64.zip -d /usr/local/v2ray
     cp /usr/local/v2ray/v2ray /usr/local/bin/
     cp /usr/local/v2ray/geoip.dat /usr/local/bin/
