@@ -11,16 +11,13 @@ chmod +x socks5.sh<br>
 ./socks5.sh install|uninstall<br>
 
 # 用户管理
-./socks5.sh user add <username> <password><br>
-./socks5.sh user del <username><br>
-./socks5.sh user list
+socks5 user add <username> <password><br>
+socks5 user del <username><br>
+socks5 user list
 
 # 服务管理
-./socks5.sh start|stop|restart|status
+socks5 start|stop|restart|status
 
 # 更新和信息
-./socks5.sh update
-./socks5.sh info
-
-
-
+socks5 update
+socks5 info
