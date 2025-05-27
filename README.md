@@ -3,6 +3,7 @@
 一键安装（首次运行）：
 
 wget https://raw.githubusercontent.com/xsj0609/socks5-install/main/socks5.sh -O /tmp/socks5.sh
+
 bash /tmp/socks5.sh install
 
 添加用户：
