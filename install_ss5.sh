@@ -1,6 +1,6 @@
 	#!/bin/bash
 	# =================================================================
-	# SS5 SOCKS5 Proxy Server Auto-Installation Script (Robust Version)
+	# SS5 SOCKS5 Proxy Server Auto-Installation Script (Stable Mirror)
 	# Enhanced for modern Linux distributions (Systemd)
 	# Author: AI Expert
 	# Date: 2025-10-19
@@ -36,10 +36,10 @@
 	if [[ "$OS" == "centos" || "$OS" == "rhel" || "$OS" == "almalinux" || "$OS" == "rocky" ]]; then
 	    yum update -y
 	    yum groupinstall -y "Development Tools"
-	    yum install -y pam-devel openssl-devel openldap-devel cyrus-sasl-devel wget curl
+	    yum install -y pam-devel openssl-devel openldap-devel cyrus-sasl-devel wget
 	elif [[ "$OS" == "debian" || "$OS" == "ubuntu" ]]; then
 	    apt-get update
-	    apt-get install -y build-essential libpam0g-dev libssl-dev libldap2-dev libsasl2-dev wget curl
+	    apt-get install -y build-essential libpam0g-dev libssl-dev libldap2-dev libsasl2-dev wget
 	else
 	    echo "错误：不支持的操作系统 $OS。"
 	    exit 1
@@ -48,33 +48,11 @@
 	# --- Download and Compile SS5 ---
 	echo "正在下载 SS5 源码..."
 	cd /usr/local/src
-	DOWNLOAD_URL="https://sourceforge.net/projects/ss5/files/ss5/${SS5_VERSION}/ss5-${SS5_VERSION}.tar.gz/download"
+	# Use a stable, known-good mirror instead of the redirecting sourceforge.net URL
+	DOWNLOAD_URL="https://netcologne.dl.sourceforge.net/project/ss5/ss5/${SS5_VERSION}/ss5-${SS5_VERSION}.tar.gz"
 	DOWNLOADED_FILE="ss5-${SS5_VERSION}.tar.gz"
-	DOWNLOAD_SUCCESS=0
-	# Try wget first with timeout and retries
-	echo "尝试使用 wget 下载..."
-	if wget --timeout=30 --tries=3 --no-check-certificate -O "${DOWNLOADED_FILE}" "${DOWNLOAD_URL}"; then
-	    DOWNLOAD_SUCCESS=1
-	    echo "wget 下载成功。"
-	else
-	    echo "wget 下载失败，尝试使用 curl 作为备用方案..."
-	    # Try curl as a fallback
-	    if curl -L --connect-timeout 30 --retry 3 -o "${DOWNLOADED_FILE}" "${DOWNLOAD_URL}"; then
-	        DOWNLOAD_SUCCESS=1
-	        echo "curl 下载成功。"
-	    else
-	        echo "错误：所有下载尝试均失败。"
-	    fi
-	fi
-	# Check if download was successful
-	if [ "$DOWNLOAD_SUCCESS" -eq 0 ]; then
-	    echo "=========================================================="
-	    echo "错误：无法下载 SS5 源码。"
-	    echo "这可能是由于网络问题或 SourceForge 镜像故障。"
-	    echo "请稍后重试，或参考手动安装指南。"
-	    echo "=========================================================="
-	    exit 1
-	fi
+	echo "正在从稳定镜像站下载: ${DOWNLOAD_URL}"
+	wget --no-check-certificate --timeout=60 -O "${DOWNLOADED_FILE}" "${DOWNLOAD_URL}"
 	echo "正在解压和编译 SS5..."
 	tar xzf "${DOWNLOADED_FILE}"
 	cd "ss5-${SS5_VERSION}"
