@@ -1,1 +1,1 @@
-wget https://github.com/xsj0609/socks5-install/blob/main/install_ss5.sh;bash install_ss5.sh
+rm -f install_ss5.sh && wget -qO- https://raw.githubusercontent.com/xsj0609/socks5-install/main/install_ss5.sh | sudo bash
